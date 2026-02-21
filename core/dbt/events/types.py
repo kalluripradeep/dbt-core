@@ -1,4 +1,5 @@
 import json
+import os
 from typing import List
 
 from dbt.constants import MAXIMUM_SEED_SIZE_NAME, PIN_PACKAGE_URL
@@ -219,6 +220,7 @@ class ProjectCreated(InfoLevel):
     def message(self) -> str:
         return f"""
 Your new dbt project "{self.project_name}" was created!
+Initialized new project in {os.getcwd()}
 
 For more information on how to configure the profiles.yml file,
 please consult the dbt documentation here:
